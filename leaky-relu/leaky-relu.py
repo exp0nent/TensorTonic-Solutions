@@ -1,0 +1,14 @@
+import numpy as np
+
+def leaky_relu(x, alpha=0.01):
+    """
+    Vectorized Leaky ReLU implementation.
+    """
+    # Write code here
+    x = np.asarray(x, dtype=float)
+
+    # Handle scalar input
+    if x.ndim == 0:
+        x = x.reshape(1,)
+
+    return np.where(x >= 0, x, alpha * x)
